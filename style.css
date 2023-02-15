@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.logo{
+    width: 40%;
+    height: 40%;
+
+}
+li > a{
+    padding: white;
+}
+section{
+    background: rgb(231,35,128);
+    background: linear-gradient(75deg, rgba(231,35,128,1) 0%, rgba(228,226,90,1) 100%);
+}
+.boton >a{
+    font-size: 12px;
+    width: 45px;
+    height: 45px;
+    padding: 10px 10px;
+    border-radius: 50%;
+    bottom: 20px;
+    margin-inline: 10px;
+}
+.card-img-top{
+    height: 150px;
+}
+th, td{
+width: 33%;
+}
+caution{
+    font-size: 25px;
+}
