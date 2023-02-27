@@ -4,17 +4,22 @@
     box-sizing: border-box;
 }
 .logo{
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
+}
 
+#secondnav{
+    background: radial-gradient(circle, rgba(221,217,203,1) 0%, rgba(92,86,87,1) 49%);
+  
 }
-li > a{
-    padding: white;
-}
-section{
+#section{
     background: rgb(231,35,128);
     background: linear-gradient(75deg, rgba(231,35,128,1) 0%, rgba(228,226,90,1) 100%);
 }
+/*section{
+    background: rgb(231,35,128);
+    background: linear-gradient(75deg, rgba(231,35,128,1) 0%, rgba(228,226,90,1) 100%);
+}*/
 .boton >a{
     font-size: 12px;
     width: 45px;
@@ -26,6 +31,9 @@ section{
 }
 .card-img-top{
     height: 150px;
+}
+#card{
+    height: 100%;
 }
 th, td{
 width: 33%;

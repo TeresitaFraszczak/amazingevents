@@ -1,16 +1,14 @@
 let htmlEvents = "";
-for (let event of data.events) {
-    let currentDate = new Date(data.currentDate);
-    let eventDate = new Date(event.date);
-    console.log(currentDate);
-    console.log(eventDate);
+let cardContainer = document.getElementById("cardcontainer");
 
+let currentDate = new Date(data.currentDate);
+for (let event of data.events) {
+    let eventDate = new Date(event.date);
     if (eventDate < currentDate) {
-       console.log('pasado');
-    } else {
-        console.log('futuro')
-    }
-}
+        htmlEvents += createCard(event);
+    };
+};
+cardContainer.innerHTML = htmlEvents;
 
     /*htmlEvents += `<div class="col">
                   <div class="card text-bg-dark mb-3" style="max-width: 18rem;">

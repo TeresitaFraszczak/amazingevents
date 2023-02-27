@@ -171,3 +171,20 @@ let data = {
       }
     ]
   };
+  
+  function createCard(event){
+    let card=`<div class="col">
+    <div id=card class="card text-bg-dark mb-3">
+      <img src="${event.image}" class="card-img-top" alt="costume party">
+      <div class="card-body">
+        <h5 class="card-title text-center">${event.name}</h5>
+        <p class="card-text">${event.description}</p>
+        <div class="d-grid gap-2 d-md-flex align-items-end justify-content-between">
+          <p>Price: US$ ${event.price}</p>  
+          <a href="#" class="btn btn-outline-danger ">+ more ...</a>
+        </div>
+      </div>
+    </div>
+  </div>`;  
+  return card;
+  }
