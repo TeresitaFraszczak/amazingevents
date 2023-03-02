@@ -9,3 +9,5 @@ let cardContainer = document.getElementById("cardcontainer");
        };
     };
   cardContainer.innerHTML = htmlEvents; 
+
+  //capturar el click de categorias

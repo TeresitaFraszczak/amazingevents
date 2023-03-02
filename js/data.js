@@ -188,3 +188,8 @@ let data = {
   </div>`;  
   return card;
   }
+
+  //obtener categoria de las card
+  /*function elegirCategoria(category) {
+    let elementoCategoria=document.querySelectorAll()
+  }*/
