@@ -5,7 +5,7 @@ console.log(queryString);
 
 const params = new URLSearchParams(queryString);
         
-        const id = params.get("_id");
+        const id = params.get("id");
         const evento = data.events.find(event => event._id == id);
 
  const cardDetail = document.querySelector("#containerdetails");

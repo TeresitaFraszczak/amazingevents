@@ -181,7 +181,7 @@ let data = {
         <p class="card-text">${event.description}</p>
         <div class="d-grid gap-2 d-md-flex align-items-end justify-content-between">
           <p>Price: US$ ${event.price}</p>  
-          <a href="#" class="btn btn-outline-danger ">+ more ...</a>
+          <a href="./event.html?id=${event._id}" class="btn btn-outline-danger ">+ more ...</a>
         </div>
       </div>
     </div>
