@@ -7,16 +7,10 @@
     width: 100%;
     
 }
-.card-img-top.navbar-brand{
-    width: 200px;
-    height:50px;
-}
-#navbarNav.collapse.navbar-collapse{
-    width: 500px ;
-    height: 31px;
 
+.navbar-collapse {
+    flex-grow: 0!important;
 }
-
 
 #navoculta{
 height: 74px;

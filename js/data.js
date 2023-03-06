@@ -189,7 +189,27 @@ let data = {
   return card;
   }
 
-  //obtener categoria de las card
-  /*function elegirCategoria(category) {
-    let elementoCategoria=document.querySelectorAll()
-  }*/
+  //1 obtener categoria de las card
+let categorias =[];
+data.events.forEach (evento => {
+  if(!categorias.includes(evento.category)){
+    categorias.push(evento.category)
+  }
+});
+console.log(categorias);
+
+function creoCategoria(category){
+    return  `<div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox${category}" value="${category}" name="categoria">
+    <label class="form-check-label" for="inlineCheckbox${category}">${category}</label>
+ </div>`;
+  }
+
+
+  /*console.log([document])
+   let divContainer = document.querySelector("#cardcontainer")
+   function rederCard(eventos){
+    console.log(eventos)
+   }
+   let contenedor = document.createElement("div")*/
+

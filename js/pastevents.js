@@ -10,4 +10,13 @@ for (let event of data.events) {
 };
 cardContainer.innerHTML = htmlEvents;
 
-   
+let checkbox = document.getElementById('containercheck');
+let HTMLhome ="";
+for(let category of categorias){
+   HTMLhome += creoCategoria(category);
+}
+checkbox.innerHTML = HTMLhome;
+
+//que tome la opcion seleccionada
+let categoriasItems= document.querySelectorAll(".form-check-input");
+console.log(categoriasItems);
