@@ -10,7 +10,7 @@ let cardContainer = document.getElementById("cardcontainer");
     };
   cardContainer.innerHTML = htmlEvents; 
 
-  //creo dinamicamente las categorias desde la función
+  //creo dinamicamente las categorias usando la función
 let checkbox = document.getElementById('containercheck');
 let HTMLhome ="";
 for(let category of categorias){
