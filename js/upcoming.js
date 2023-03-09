@@ -50,7 +50,7 @@ if (categoriasSelect.length > 0){
 
 
 //búsqueda
-let busqueda=[];
+//let busqueda=[];
 
 let inputBusqueda=document.getElementById("search");
 document.querySelector("#form-search").onsubmit = (e)=> {

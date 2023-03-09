@@ -13,16 +13,18 @@ let cardContainer = document.getElementById("cardcontainer");
   //creo dinamicamente las categorias usando la función
 let checkbox = document.getElementById('containercheck');
 let HTMLhome ="";
+let cardbusqueda=[];
+
 for(let category of categorias){
    HTMLhome += creoCategoria(category);
 }
 checkbox.innerHTML = HTMLhome;
 
-//que tome la opcion seleccionada
+//que tome la opcion seleccionada =
 let categoriasItems= document.querySelectorAll(".form-check-input");
 console.log(categoriasItems);
 
-//capturar el click de categorias en un array 
+//capturar el click de categorias en un array =
 categoriasItems.forEach(checkbox => checkbox.onchange = () => {
    let HTMLresultados="";
    let categoriasSelect=[];
@@ -33,39 +35,59 @@ categoriasItems.forEach(checkbox => checkbox.onchange = () => {
    });
    console.log(categoriasSelect);
 
+  let textoingresado = inputBusqueda.value.toLowerCase().trim();
+    HTMLresultados = Search(categoriasSelect,textoingresado)
+
+    document.querySelector("#cardcontainer").innerHTML=HTMLresultados; 
+   });
+
+
+   function Search(categorias,textoingresado){
+      let HTMLresultados="";
+      if (categorias.length>0 && textoingresado == ""){
+         data.events.filter(event => categorias.includes(event.category)).forEach(event =>{
+            HTMLresultados += createCard(event)});
+            
+            console.log(HTMLresultados);
+         }else if(categorias.length>0 && textoingresado != ""){ 
+            data.events.filter(event => categorias.includes(event.category)).filter(event =>event.name.toLowerCase().includes(textoingresado) || event.description.toLowerCase().includes(textoingresado)).forEach(event =>
+                 {HTMLresultados += createCard(event)});
+           
+                 console.log(HTMLresultados);
+         }else if(categorias.length==0 && textoingresado != ""){ 
+            data.events.filter(event => categorias.includes(event.category)).filter(event =>event.name.toLowerCase().includes(textoingresado) || event.description.toLowerCase().includes(textoingresado)).forEach(event =>
+                  {HTMLresultados += createCard(event)});
+                  console.log(HTMLresultados);       
+                 
+         }else if(categorias.length==0 && cardbusqueda.length == 0){
+                 data.events.forEach(event =>
+                 {HTMLresultados += createCard(event)});
+             }
+            
+     
+             return HTMLresultados;
+       }
    
-if (categoriasSelect.length > 0){
-   data.events.filter(event => categoriasSelect.includes(event.category)).forEach(events =>{
-      HTMLresultados += createCard(events)});
-      
-      console.log(HTMLresultados);
-   } else{
-      data.events.forEach(events =>{
-         HTMLresultados += createCard(events)});
-   }
-   document.querySelector("#cardcontainer").innerHTML=HTMLresultados; 
-});
-
-
 //búsqueda
-let busqueda=[];
+//let busqueda=[];
 
 let inputBusqueda=document.getElementById("search");
 document.querySelector("#form-search").onsubmit = (e)=> {
    e.preventDefault();
-let resultadoBusqueda="";
+   let HTMLresultados="";
+   let categoriasSelect=[];
+   categoriasItems.forEach(checkbox =>{
+      if (checkbox.checked){
+         categoriasSelect.push(checkbox.value);
+      }
+   });
+   console.log(categoriasSelect);
 
-let textingresado = inputBusqueda.value.toLowerCase().trim();
 
-for (let event of data.events) {
-   if (event.name.toLowerCase().includes(textingresado)
-   ||event.description.toLowerCase().includes(textingresado)) {
-      resultadoBusqueda+= createCard(event); 
-   }
-}
-   
-console.log(resultadoBusqueda);
-document.querySelector("#cardcontainer").innerHTML=resultadoBusqueda;
+let textoingresado = inputBusqueda.value.toLowerCase().trim();
+HTMLresultados = Search(categoriasSelect,textoingresado);
+
+document.querySelector("#cardcontainer").innerHTML=HTMLresultados;
 }
 
 
