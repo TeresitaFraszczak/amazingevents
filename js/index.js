@@ -85,6 +85,8 @@ document.querySelector("#form-search").onsubmit = (e)=> {
 
 
 let textoingresado = inputBusqueda.value.toLowerCase().trim();
+
+
 HTMLresultados = Search(categoriasSelect,textoingresado);
 
 document.querySelector("#cardcontainer").innerHTML=HTMLresultados;
