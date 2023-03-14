@@ -1,3 +1,17 @@
+/*let data = localStorage.getItem("data")
+console.log(data)
+data = JSON.parse(data)
+function displayAllEvents(data){
+   let indexEvents = "";
+   for (let event of data.events){
+      indexEvents += createCard (event);
+   }
+   document.getElementById("cards").innerHTML=indexEvents;
+}
+console.log(data)*/
+
+
+
 let htmlEvents = "";
 let cardContainer = document.getElementById("cardcontainer");
     
@@ -55,7 +69,7 @@ categoriasItems.forEach(checkbox => checkbox.onchange = () => {
            
                  console.log(HTMLresultados);
          }else if(categorias.length==0 && textoingresado != ""){ 
-            data.events.filter(event => categorias.includes(event.category)).filter(event =>event.name.toLowerCase().includes(textoingresado) || event.description.toLowerCase().includes(textoingresado)).forEach(event =>
+            data.events.filter(event =>event.name.toLowerCase().includes(textoingresado) || event.description.toLowerCase().includes(textoingresado)).forEach(event =>
                   {HTMLresultados += createCard(event)});
                   console.log(HTMLresultados);       
                  
@@ -64,8 +78,7 @@ categoriasItems.forEach(checkbox => checkbox.onchange = () => {
                  {HTMLresultados += createCard(event)});
              }
             
-     
-             return HTMLresultados;
+            return HTMLresultados;
        }
    
 //búsqueda
@@ -91,5 +104,3 @@ HTMLresultados = Search(categoriasSelect,textoingresado);
 
 document.querySelector("#cardcontainer").innerHTML=HTMLresultados;
 }
-
-

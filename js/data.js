@@ -1,3 +1,11 @@
+/*async function getData(){
+  await fetch("https://mindhub-xj03.onrender.com/api/amazing")
+  .then (respuesta => respuesta.json())
+  .then (json => data=json)
+  localStorage.setItem("data",JSON.stringify(data))
+}
+getData()*/
+
 let data = {
     "currentDate": "2022-01-01",
     "events": [
