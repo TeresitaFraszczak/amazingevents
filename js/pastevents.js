@@ -1,16 +1,3 @@
-/*let data =localStorage.getItem("data")
-console.log(data)
-data = JSON.parse(data)
-function displayAllEvents(data){
-   let indexEvents = "";
-   for (let event of data.events){
-      indexEvents += createCard (event);
-   }
-   document.getElementById("cards").innerHTML=indexEvents;
-}
-console.log(data)*/
-
-
 let htmlEvents = "";
 let cardContainer = document.getElementById("cardcontainer");
 let eventospasados= [];
